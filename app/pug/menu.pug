@@ -1,0 +1,54 @@
+mixin menu
+	span.grid-content
+		.awr
+			a(href='index.html')
+				button.home_button home
+		.awr
+			a companies: 7,215
+		.awr
+			a total market cap: $86.168 T
+		.awr
+			a
+				input(type='text' placeholder='Company name, ticker...')
+mixin footer
+	.container2
+				.left_top What is the market capitalization of a company?
+							The market capitalization sometimes referred as Marketcap, is the value of a publicly listed company. In most cases it can be easily calculated by multiplying the share price with the amount of outstanding shares.
+				.left_right DISCLAIMER
+							CompaniesMarketCap.com is not associated in any way with CoinMarketCap.com
+							Stock prices are delayed, the delay can range from a few minutes to several hours.
+							Company logos are from the CompaniesLogo.com logo database and belong to their respective copyright holders. Companies Marketcap displays them for editorial purposes only.
+				.right Contact For inquiries or if you want to report a problem write to hello@8marketcap.com
+mixin table_row(rank, logo_icon, name, shortcut, market_cap, price, today, country_icon, country_name, link)
+	tr(onclick="window.location='"+link+"';")
+		a
+			td= rank
+			td
+				img.name_image(src=logo_icon)
+				span.name_first_span= name
+				br
+				span.name_second_span= shortcut
+			td.remtd= market_cap
+			td.remtd= price
+			td.remtd
+				span= today
+			td.price.remtd
+				svg
+					path( d="M0,3 5,5 10,5 15,14 20,12 25,12 30,9 35,7 40,11 45,22 50,25 55,29 60,29 65,24 70,29 75,30 80,30 85,33 90,39 95,33 100,33 105,33 110,41 115,39 120,41 125,33 130,32 135,31 140,27 145,27 150,25 155,25")
+			td.country.remtd
+				img(src= country_icon)
+				span= country_name
+		
+
+doctype html
+html(lang="ru")
+head
+	meta(charset="UTF-8")
+	meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+	link(rel="stylesheet", href="css/main.css")
+body
+	block menu
+		+menu
+	block body
+	block footer
+		+footer
